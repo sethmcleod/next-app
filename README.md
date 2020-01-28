@@ -6,7 +6,7 @@ Check out a live example of the app [here](https://webapp.seth.now.sh).
 
 ### Setup
 
-```
+```bash
 # Make sure you're on correct Node version
 nvm use
 
