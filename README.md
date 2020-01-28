@@ -16,7 +16,7 @@ yarn install
 
 ### Development
 
-```
+```bash
 # Starts Next.js in development mode
 yarn dev
 
