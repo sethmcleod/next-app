@@ -2,6 +2,8 @@
 
 Starter webapp leveraging the [Next.js](https://nextjs.org/) React framwork and [Blueprint](https://blueprintjs.com/) UI Toolkit.
 
+Check out a live example of the app [here](https://webapp.seth.now.sh).
+
 ### Setup
 
 ```
@@ -26,10 +28,4 @@ yarn start
 
 # Test all the things
 yarn test
-```
-
-### Deploy
-
-```
-now
 ```

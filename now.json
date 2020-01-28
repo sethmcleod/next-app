@@ -1,6 +1,5 @@
 {
   "version": 2,
   "name": "webapp",
-  "alias": "webapp",
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
