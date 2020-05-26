@@ -11,21 +11,21 @@ Check out a live example of the app [here](https://web-app.seth.now.sh).
 nvm use
 
 # Install dependencies
-npm install
+yarn install
 ```
 
 ### Development
 
 ```bash
 # Starts Next.js in development mode
-npm run dev
+yarn dev
 
 # Builds the application for production usage
-npm run build
+yarn build
 
 # Starts a Next.js production server
-npm start
+yarn start
 
 # Test all the things
-npm run test
+yarn test
 ```
