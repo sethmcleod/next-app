@@ -2,7 +2,7 @@
 
 Starter webapp leveraging the [Next.js](https://nextjs.org/) React framwork and [Blueprint](https://blueprintjs.com/) UI Toolkit.
 
-Check out a live example of the app [here](https://webapp.seth.now.sh).
+Check out a live example of the app [here](https://web-app.seth.now.sh).
 
 ### Setup
 
