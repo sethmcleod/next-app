@@ -7,7 +7,7 @@ Check out a live example of the app [here](https://web-app.seth.now.sh).
 ### Setup
 
 ```bash
-# Make sure you're on correct Node version
+# Make sure you're using recommended Node version
 nvm use
 
 # Install dependencies
@@ -20,7 +20,7 @@ yarn install
 # Starts Next.js in development mode
 yarn dev
 
-# Builds the application for production usage
+# Builds the application for production use
 yarn build
 
 # Starts a Next.js production server
