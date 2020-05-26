@@ -1,6 +1,6 @@
 # Web App
 
-Starter webapp leveraging the [Next.js](https://nextjs.org/) React framwork and [Blueprint](https://blueprintjs.com/) UI Toolkit.
+Starter web app leveraging the [Next.js](https://nextjs.org/) React framework and [Chakra UI](https://chakra-ui.com/) component library.
 
 Check out a live example of the app [here](https://web-app.seth.now.sh).
 

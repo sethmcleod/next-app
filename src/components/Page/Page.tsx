@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { Header } from '../Header';
+
 interface IPageProps {
   children?: any;
 }
 
 export const Page: React.SFC<IPageProps> = ({ children }) => (
   <div>
-    <div>Web App</div>
+    <Header />
     {children}
   </div>
 );
