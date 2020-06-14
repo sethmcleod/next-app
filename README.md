@@ -7,7 +7,7 @@ Check out a live example of the app [here](https://next-app.seth.now.sh).
 ### Setup
 
 ```bash
-# Make sure you're using recommended Node version
+# Make sure you're using the recommended Node version
 nvm use
 
 # Install dependencies
