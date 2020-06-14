@@ -1,4 +1,4 @@
-FROM node:12.16
+FROM node:12.17
 
 # Set working directory
 WORKDIR /usr/src/app
@@ -8,13 +8,13 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN yarn install --production
+RUN npm install --production
 
 # Copy all files
 COPY ./ ./
 
 # Build app
-RUN yarn build
+RUN npm run build
 
 # Expose the listening port
 EXPOSE 3000
