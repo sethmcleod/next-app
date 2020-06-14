@@ -1,4 +1,4 @@
-import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
+import { CSSReset, ThemeProvider } from '@chakra-ui/core';
 import { NextComponentType } from 'next';
 import React from 'react';
 
@@ -6,9 +6,7 @@ const App = ({ Component, pageProps }: { Component: NextComponentType; pageProps
   return (
     <ThemeProvider>
       <CSSReset />
-      <ColorModeProvider>
-        <Component {...pageProps} />
-      </ColorModeProvider>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 };

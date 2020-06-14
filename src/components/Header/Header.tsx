@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@chakra-ui/core';
+import { Badge, Flex, Heading } from '@chakra-ui/core';
 import React from 'react';
 
 export const Header: React.SFC = (props) => {
@@ -10,13 +10,15 @@ export const Header: React.SFC = (props) => {
       wrap="wrap"
       padding="1.5rem"
       bg="gray.700"
-      color="white"
       {...props}
     >
-      <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg">
+      <Flex align="center" justify="space-between" width="100%" mr={5}>
+        <Heading as="h1" size="lg" color="white">
           Next App
         </Heading>
+        <Badge variantColor="gray">
+          Alpha
+        </Badge>
       </Flex>
     </Flex>
   );
