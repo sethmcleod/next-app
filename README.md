@@ -2,11 +2,11 @@
 
 Starter app utilizing the [Next.js](https://nextjs.org/) React framework and [Chakra UI](https://chakra-ui.com/) component library.
 
-Check out a live example of the app [here](https://next-app.seth.now.sh).
+Check out a live example of the app [here](https://next.seth.vercel.app).
 
 ### Setup
 
-```bash
+```
 # Make sure you're using the recommended Node version
 nvm use
 
@@ -16,7 +16,7 @@ npm install
 
 ### Development
 
-```bash
+```
 # Starts Next.js in development mode
 npm run dev
 
