@@ -29,3 +29,5 @@ npm start
 # Test all the things
 npm run test
 ```
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/zeit/now-examples/tree/master/nextjs)
