@@ -1,14 +1,19 @@
-import { CSSReset, ThemeProvider } from '@chakra-ui/core';
-import { NextComponentType } from 'next';
-import React from 'react';
+import type { AppProps } from 'next/app';
+import { Toaster } from 'react-hot-toast';
+import { Provider } from 'urql';
 
-const App = ({ Component, pageProps }: { Component: NextComponentType; pageProps: any }) => {
+import Layout from '../client/components/Layout';
+import { client } from '../client/graphql/client';
+
+function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
-      <CSSReset />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Provider value={client}>
+      <Layout>
+        <Component {...pageProps} />
+        <Toaster />
+      </Layout>
+    </Provider>
   );
-};
+}
 
-export default App;
+export default CustomApp;
