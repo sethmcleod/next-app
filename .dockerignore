@@ -1,16 +1,2 @@
-.editorconfig
-.git
-.gitignore
-.prettierrc.js
-.next
-.vscode
-docker-compose*
-Dockerfile*
-jest.config.js
-jest.setup.js
-LICENSE
 node_modules
-now.json
 npm-debug.log
-README.md
-tslint.json

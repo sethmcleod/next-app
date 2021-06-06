@@ -1,0 +1,13 @@
+query GetProject($id: String, $slug: String) {
+  project(id: $id, slug: $slug) {
+    id
+    name
+    slug
+    paidPlan
+    users {
+      id
+      name
+      email
+    }
+  }
+}

@@ -1,8 +1,24 @@
-import { withTheme } from 'emotion-theming';
-import React from 'react';
+import Link from 'next/link';
 
-import { Page } from '../components';
+import { useGetCurrentUserQuery } from '../client/graphql/getCurrentUser.generated';
 
-const Home = () => <Page />;
+function Homepage() {
+  const [{ data }] = useGetCurrentUserQuery();
 
-export default withTheme(Home);
+  return (
+    <>
+      <h1>Next App</h1>
+      {!data?.currentUser ? (
+        <>
+          <Link href="/get-started">Get started</Link>
+          <br />
+          <Link href="/login">Login</Link>
+        </>
+      ) : (
+        <Link href="/app">Go to dashboard</Link>
+      )}
+    </>
+  );
+}
+
+export default Homepage;
