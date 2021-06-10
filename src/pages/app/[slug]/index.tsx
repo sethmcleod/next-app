@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import UpgradeButton from '../../../client/components/UpgradeButton';
 import { useGetProjectQuery } from '../../../client/graphql/getProject.generated';
 
-function Project() {
+export default function Project() {
   const router = useRouter();
   const { slug } = router.query;
   const [{ data, fetching, error }] = useGetProjectQuery({
@@ -30,5 +30,3 @@ function Project() {
     </>
   );
 }
-
-export default Project;

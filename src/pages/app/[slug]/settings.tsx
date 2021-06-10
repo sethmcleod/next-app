@@ -48,7 +48,7 @@ function InvitationForm({ projectId }: { projectId: string }) {
   );
 }
 
-function ProjectSettings() {
+export default function ProjectSettings() {
   const router = useRouter();
   const { slug } = router.query;
   const [{ data: currentUserData }] = useGetCurrentUserQuery();
@@ -127,5 +127,3 @@ function ProjectSettings() {
     </>
   );
 }
-
-export default ProjectSettings;

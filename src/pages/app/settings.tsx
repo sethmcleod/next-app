@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useGetCurrentUserQuery } from '../../client/graphql/getCurrentUser.generated';
 import { useUpdateUserMutation } from '../../client/graphql/updateUser.generated';
 
-export default function Dashboard() {
+export default function Settings() {
   const [{ data, fetching, error }] = useGetCurrentUserQuery();
   const router = useRouter();
   const [, updateUser] = useUpdateUserMutation();
@@ -23,10 +23,10 @@ export default function Dashboard() {
   if (error) return <p>{error.message}</p>;
 
   if (!currentUser) {
-    if (process.browser) router.push('/login');
+    if (process.browser) router.push('/signin');
     return (
       <p>
-        Redirecting to <Link href="/login">/login</Link>
+        Redirecting to <Link href="/signin">/signin</Link>
         ...
       </p>
     );
