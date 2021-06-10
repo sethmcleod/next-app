@@ -1,12 +1,10 @@
 # Migrate the database when something is pushed to main/master
 name: Migrate
-
 on:
   push:
     branches:
       - main
       - master
-
 jobs:
   production:
     name: Production
