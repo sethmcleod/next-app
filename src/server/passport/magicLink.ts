@@ -13,8 +13,8 @@ const magicLink = new MagicLoginStrategy({
 
     await sendEmail({
       to: destination,
-      subject: `Your login link`,
-      text: `Hey! Click on this link to finish logging in: ${link}\nMake sure the verification code matches ${code}!`,
+      subject: `Your sign in link`,
+      text: `Hey! Click on this link to finish signing in: ${link}\nMake sure the verification code matches ${code}!`,
     });
   },
   verify: (payload, callback) => {

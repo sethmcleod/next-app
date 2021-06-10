@@ -11,7 +11,7 @@ import { decodeInvitationToken } from '../../../server/invitations/token';
 export default handler().get(async (req, res) => {
   const { token } = req.query;
   if (!req.user) {
-    res.redirect(`/login?r=/api/invitations/accept/?token=${token}`);
+    res.redirect(`/signin?r=/api/invitations/accept/?token=${token}`);
     return;
   }
 
