@@ -1798,10 +1798,10 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d.tgz#a7f80d481ec6cb8e2975ab530664d4ca5fc9eba6"
   integrity sha512-NzhbwC4iMbRQwJxdhNQX6eaVcOuNGtHRk6aesWE4KMf/YmlW5kfi3HDy7WZ/C4P0Iyn9oURDuk+xZV6QDUVjTw==
 
-"@prisma/engines@2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d":
-  version "2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
-  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d.tgz#db2809a6f7f18584e3ca89b1f5bad884155629ec"
-  integrity sha512-rEWpaG7wZvPuWJC5SwkBB/Iwue//oC5yv58Mse7r+ibtgkA7vGdWc1bFDQ32DT9tDL5WSC6bBwqEASGV/1Gm1Q==
+"@prisma/engines@2.25.0-36.c838e79f39885bc8e1611849b1eb28b5bb5bc922":
+  version "2.25.0-36.c838e79f39885bc8e1611849b1eb28b5bb5bc922"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.25.0-36.c838e79f39885bc8e1611849b1eb28b5bb5bc922.tgz#68d7850d311df6d017e1b878adb19ec21483bcf0"
+  integrity sha512-vjLCk8AFRZu3D8h/SMcWDzTo0xkMuUDyXQzXekn8gzAGjb47B6LQXGR6rDoZ3/uPM13JNTLPvF62mtVaY6fVeQ==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -7490,12 +7490,12 @@ pretty-format@^27.0.2:
     ansi-styles "^5.0.0"
     react-is "^17.0.1"
 
-prisma@~2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.19.0.tgz#2c14f9cbbfb0ab69c8a9473e16736759713d29ad"
-  integrity sha512-iartCNVrtR4XT20ABN3zrSi3R/pCBe75Y0ZH8681QIGm8qjRQzf3DnbscPZgZ9iY4KFuVxL8ZrBQVDmRhpN0EQ==
+prisma@~2.25.0:
+  version "2.25.0"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.25.0.tgz#1ebfef3e945a22c673b3e3c5100f098da475700d"
+  integrity sha512-AdAlP+PShvugljIx62Omu+eLKu6Cozz06dehmClIHSb0/yFiVnyBtrRVV4LZus+QX6Ayg7CTDvtzroACAWl+Zw==
   dependencies:
-    "@prisma/engines" "2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
+    "@prisma/engines" "2.25.0-36.c838e79f39885bc8e1611849b1eb28b5bb5bc922"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
