@@ -11,7 +11,7 @@ const secondsToMsDate = (seconds: number) => new Date(seconds * 1000);
 interface StripeSession {
   customer: string;
   metadata: {
-    projectId: string;
+    userId: string;
   };
   subscription: string;
 }
@@ -45,9 +45,9 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (event.type === 'checkout.session.completed') {
     const subscription = await stripe.subscriptions.retrieve(session.subscription);
 
-    await prisma.project.update({
+    await prisma.user.update({
       where: {
-        id: session.metadata.projectId,
+        id: session.metadata.userId,
       },
       data: {
         stripeCurrentPeriodEnd: secondsToMsDate(subscription.current_period_end),
@@ -62,7 +62,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (event.type === 'invoice.payment_succeeded') {
     const subscription = await stripe.subscriptions.retrieve(session.subscription);
 
-    await prisma.project.update({
+    await prisma.user.update({
       where: {
         stripeSubscriptionId: subscription.id,
       },

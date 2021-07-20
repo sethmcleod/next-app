@@ -3,11 +3,8 @@
 
 
 type Mutation {
-  createProject(name: String!, slug: String): Project
-  createStripeCheckoutBillingPortalUrl(projectId: String!): String
-  createStripeCheckoutSession(plan: PaidPlan!, projectId: String!): String
-  inviteToProject(email: String!, projectId: String!): Boolean
-  removeUserFromProject(projectId: String!, userId: String!): Project
+  createStripeCheckoutBillingPortalUrl(userId: String!): String
+  createStripeCheckoutSession(plan: PaidPlan!): String
   updateUser(name: String, userId: String!): User
 }
 
@@ -15,34 +12,13 @@ enum PaidPlan {
   pro
 }
 
-type Project {
-  id: String!
-  name: String!
-  paidPlan: PaidPlan
-  slug: String!
-  users(after: UserWhereUniqueInput, before: UserWhereUniqueInput, first: Int, last: Int): [User!]!
-}
-
-input ProjectWhereUniqueInput {
-  id: String
-  slug: String
-  stripeCustomerId: String
-  stripeSubscriptionId: String
-}
-
 type Query {
   currentUser: User
-  project(id: String, slug: String): Project
 }
 
 type User {
   email: String!
   id: String!
   name: String
-  projects(after: ProjectWhereUniqueInput, before: ProjectWhereUniqueInput, first: Int, last: Int): [Project!]!
-}
-
-input UserWhereUniqueInput {
-  email: String
-  id: String
+  paidPlan: PaidPlan
 }

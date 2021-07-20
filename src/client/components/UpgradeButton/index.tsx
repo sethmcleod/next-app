@@ -18,7 +18,6 @@ export default function UpgradeButton({ projectId }: { projectId: string }) {
       loadStripe(PUBLIC_STRIPE_API_KEY),
       createStripeCheckoutSession({
         plan: PaidPlan.Pro,
-        projectId,
       }).then(({ data }) => data?.createStripeCheckoutSession),
     ]).then(([stripe, sessionId]) => {
       if (!stripe || !sessionId) return;
