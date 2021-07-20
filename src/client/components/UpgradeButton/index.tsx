@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import { loadStripe } from '@stripe/stripe-js';
 
 import { useCreateStripeCheckoutSessionMutation } from '../../graphql/createStripeCheckoutSession.generated';
@@ -8,11 +9,12 @@ const PUBLIC_STRIPE_API_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_API_KEY;
 /**
  * When clicked, redirects the user to their a Stripe Checkout session to upgrade to the paid plan
  */
-export default function UpgradeButton({ projectId }: { projectId: string }) {
+export default function UpgradeButton() {
   const [, createStripeCheckoutSession] = useCreateStripeCheckoutSessionMutation();
 
   const redirectToCheckout = () => {
-    if (!PUBLIC_STRIPE_API_KEY) throw new Error('Please define the NEXT_PUBLIC_STRIPE_PUBLIC_API_KEY env var.');
+    if (!PUBLIC_STRIPE_API_KEY)
+      throw new Error('Please provide a NEXT_PUBLIC_STRIPE_PUBLIC_API_KEY environment variable.');
 
     Promise.all([
       loadStripe(PUBLIC_STRIPE_API_KEY),
@@ -28,5 +30,9 @@ export default function UpgradeButton({ projectId }: { projectId: string }) {
     });
   };
 
-  return <button onClick={redirectToCheckout}>Upgrade</button>;
+  return (
+    <Button colorScheme="yellow" w="100%" onClick={redirectToCheckout}>
+      Upgrade to Pro
+    </Button>
+  );
 }

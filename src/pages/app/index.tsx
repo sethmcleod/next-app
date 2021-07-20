@@ -1,4 +1,5 @@
 import { Box, Heading } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -29,9 +30,9 @@ export default function Dashboard() {
         Hello{username}!
       </Heading>
       <Box mt="4" mb="8" maxW="md" fontWeight="medium">
-        <Link href="/app/settings">Settings</Link>
-        <br />
-        <Link href="/api/auth/logout">Sign out</Link>
+        <Button colorScheme="blue" mt="3" type="submit" onClick={() => router.push('/app/settings')}>
+          Settings
+        </Button>
       </Box>
     </Box>
   );
