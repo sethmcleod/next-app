@@ -27,10 +27,11 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
   const WEBHOOK_ENDPOINT_SECRET = process.env.STRIPE_WEBHOOK_ENDPOINT_SECRET;
 
-  if (!WEBHOOK_ENDPOINT_SECRET)
-    throw new Error('Please provide a STRIPE_WEBHOOK_ENDPOINT_SECRET environment variable!');
+  if (!WEBHOOK_ENDPOINT_SECRET) {
+    throw new Error('Please provide a STRIPE_WEBHOOK_ENDPOINT_SECRET environment variable.');
+  }
 
-  // Verify that this is a genuine Stripe request and not just somebody pinging us
+  // Verify that this is a genuine Stripe request
   try {
     event = stripe.webhooks.constructEvent(body, sig, WEBHOOK_ENDPOINT_SECRET);
   } catch (err) {

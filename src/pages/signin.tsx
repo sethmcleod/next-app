@@ -10,7 +10,7 @@ export default function Signin() {
         Sign in to your account
       </Heading>
       <Text mt="4" mb="8" align="center" maxW="md" fontWeight="medium">
-        <Text as="span">We’ll email you a magic code for a password-free sign in ✨</Text>
+        <Text as="p">We’ll email you a magic code for a password-free sign in ✨</Text>
       </Text>
       <Box
         bg={useColorModeValue('white', 'gray.700')}

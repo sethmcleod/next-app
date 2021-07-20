@@ -11,7 +11,7 @@ export interface SeedData {
   }>;
 }
 
-// Inspired by prisma/docs#451
+// Delete all records from all tables (inspired by prisma/docs#451)
 async function emptyDatabase() {
   const tables = Prisma.dmmf.datamodel.models.map((model) => model.dbName || model.name);
 
