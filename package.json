@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Next.js & GraphQL boilerplate",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "predev": "yarn run generate",
     "dev": "next dev",
