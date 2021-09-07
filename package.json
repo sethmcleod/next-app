@@ -1,6 +1,6 @@
 {
   "name": "next-app",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Next.js & GraphQL boilerplate",
   "license": "MIT",
   "scripts": {
