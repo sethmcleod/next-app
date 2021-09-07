@@ -11,7 +11,7 @@ const secondsToMsDate = (seconds: number) => new Date(seconds * 1000);
 interface StripeSession {
   customer: string;
   metadata: {
-    projectId: string;
+    userId: string;
   };
   subscription: string;
 }
@@ -27,10 +27,11 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
   const WEBHOOK_ENDPOINT_SECRET = process.env.STRIPE_WEBHOOK_ENDPOINT_SECRET;
 
-  if (!WEBHOOK_ENDPOINT_SECRET)
-    throw new Error('Please provide a STRIPE_WEBHOOK_ENDPOINT_SECRET environment variable!');
+  if (!WEBHOOK_ENDPOINT_SECRET) {
+    throw new Error('Please provide a STRIPE_WEBHOOK_ENDPOINT_SECRET environment variable.');
+  }
 
-  // Verify that this is a genuine Stripe request and not just somebody pinging us
+  // Verify that this is a genuine Stripe request
   try {
     event = stripe.webhooks.constructEvent(body, sig, WEBHOOK_ENDPOINT_SECRET);
   } catch (err) {
@@ -45,9 +46,9 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (event.type === 'checkout.session.completed') {
     const subscription = await stripe.subscriptions.retrieve(session.subscription);
 
-    await prisma.project.update({
+    await prisma.user.update({
       where: {
-        id: session.metadata.projectId,
+        id: session.metadata.userId,
       },
       data: {
         stripeCurrentPeriodEnd: secondsToMsDate(subscription.current_period_end),
@@ -62,7 +63,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (event.type === 'invoice.payment_succeeded') {
     const subscription = await stripe.subscriptions.retrieve(session.subscription);
 
-    await prisma.project.update({
+    await prisma.user.update({
       where: {
         stripeSubscriptionId: subscription.id,
       },

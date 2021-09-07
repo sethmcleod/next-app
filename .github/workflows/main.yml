@@ -3,7 +3,7 @@ on: push
 jobs:
   test:
     name: Lint, typecheck & test
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     # Start a Postgres instance, which is used during tests
     services:
@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '14'
 
       # Cache node_modules for faster CI runs if the yarn.lock doesn't change change
       - name: Get yarn cache directory path
@@ -44,7 +44,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      # Throw an error if the yarn.lock file doesn't match the installed dependencies (rather than updating it in-place, which it does by default locally)
       - name: Install
         run: yarn install --frozen-lockfile --silent
 

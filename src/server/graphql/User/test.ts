@@ -1,8 +1,8 @@
 import { graphql, request } from '../../../test/request';
 import { testData } from '../../../test/seed/data';
 
-describe(`currentUser`, () => {
-  it(`should return null when unauthenticated`, async () => {
+describe('currentUser', () => {
+  it('should return null when unauthenticated', async () => {
     expect(
       await request(
         graphql`
@@ -22,7 +22,7 @@ describe(`currentUser`, () => {
     `);
   });
 
-  it(`should return the current user data when authenticated`, async () => {
+  it('should return the current user data when authenticated', async () => {
     expect(
       await request(
         graphql`
@@ -52,7 +52,7 @@ describe(`currentUser`, () => {
   });
 });
 
-describe(`updateUser`, () => {
+describe('updateUser', () => {
   it(`should update the user's name`, async () => {
     // Right name initially
     expect(

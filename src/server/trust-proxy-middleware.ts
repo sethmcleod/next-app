@@ -18,6 +18,7 @@ function getProtocol(req: Request) {
   }
 
   const forwardedProto = req.headers && (req.headers['x-forwarded-proto'] as string);
+
   if (forwardedProto) {
     return forwardedProto.split(/\s*,\s*/)[0];
   }

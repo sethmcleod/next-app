@@ -13,4 +13,4 @@ import { IncomingMessage } from 'http';
 export const getRequestOrigin = (req: IncomingMessage): string =>
   // The x-forwarded-proto header is the only reliable way to determine HTTP vs HTTPS
   // with Vercel serverless functions and Netlify functions.
-  `${req.headers['x-forwarded-proto'] === `https` ? `https` : `http`}://${req.headers.host}`;
+  `${req.headers['x-forwarded-proto'] === 'https' ? 'https' : 'http'}://${req.headers.host}`;
