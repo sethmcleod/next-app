@@ -6,7 +6,7 @@ if (!SECRET) throw new Error('Please specify the INVITATION_TOKEN_SECRET env var
 
 type JwtPayload = {
   destination: string;
-  projectId: string;
+  userId: string;
 };
 
 /**
@@ -14,7 +14,7 @@ type JwtPayload = {
  *
  * @example
  * ```ts
- * const { projectId } = decodeToken(req.query.token)
+ * const { userId } = decodeToken(req.query.token)
  * ```
  */
 export const decodeInvitationToken = (token: string): JwtPayload | null => {
@@ -35,7 +35,7 @@ export const decodeInvitationToken = (token: string): JwtPayload | null => {
  * ```ts
  * const token = generateToken({
  *   destination: user.email,
- *   projectId: project.id
+ *   userId: user.id
  * })
  * ```
  */

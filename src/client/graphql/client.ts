@@ -5,7 +5,7 @@ import { createClient, dedupExchange, errorExchange, fetchExchange } from 'urql'
 /**
  * Consistently determine the API URL for the current client even when in a deploy preview or similar
  */
-const getAPIURl = (): string => {
+const getAPIURL = (): string => {
   // In the browser we just use a relative URL and everything works perfectly
   if (process.browser) return `/api`;
 
@@ -14,7 +14,7 @@ const getAPIURl = (): string => {
   const PROVIDER_URL = process.env.VERCEL_URL || process.env.DEPLOY_URL;
 
   if (PROVIDER_URL) {
-    // We replace https:// from the URL if it exists and add it ourselves always at the beginning as the above environment variables are not guaranteed to include it
+    // Replace https:// in the URL if it exists as the above env vars are not guaranteed to include it
     return `https://${PROVIDER_URL.replace(/^https?:\/\//, '')}/api`;
   }
 
@@ -40,5 +40,5 @@ export const client = createClient({
     credentials: 'include',
   },
   requestPolicy: `cache-and-network`,
-  url: getAPIURl(),
+  url: getAPIURL(),
 });

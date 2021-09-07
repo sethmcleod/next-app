@@ -3,11 +3,6 @@ query GetCurrentUser {
     id
     name
     email
-    projects {
-      id
-      name
-      slug
-      paidPlan
-    }
+    paidPlan
   }
 }

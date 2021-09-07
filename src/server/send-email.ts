@@ -25,8 +25,8 @@ interface SendEmailInput {
  * ```
  */
 export const sendEmail = (input: SendEmailInput) => {
-  if (process.env.NODE_ENV === `development`) {
-    info(`not sending email in development:`);
+  if (process.env.NODE_ENV === 'development') {
+    info(`You've got mail!`);
     console.log();
     console.log(`To: ${input.to}`);
     console.log(`Subject: ${input.subject}`);
@@ -36,8 +36,13 @@ export const sendEmail = (input: SendEmailInput) => {
     return;
   }
 
-  if (API_TOKEN === 'fake' || !FROM_EMAIL) {
-    console.error(`Please specify the POSTMARK_FROM_EMAIL and POSTMARK_API_TOKEN env variables.`);
+  if (!API_TOKEN || API_TOKEN === 'fake') {
+    console.error('Please provide a POSTMARK_API_TOKEN environment variable.');
+    return;
+  }
+
+  if (!FROM_EMAIL) {
+    console.error('Please provide a POSTMARK_FROM_EMAIL environment variable.');
     return;
   }
 

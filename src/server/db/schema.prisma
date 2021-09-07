@@ -8,22 +8,11 @@ datasource db {
 }
 
 model User {
-  id         String    @id @default(cuid())
-  createdAt  DateTime  @default(now())
-  modifiedAt DateTime  @default(now())
-  email      String    @unique
-  projects   Project[]
-  name       String?
-}
-
-model Project {
-  id         String   @id @default(cuid())
-  createdAt  DateTime @default(now())
-  modifiedAt DateTime @default(now())
-  users      User[]
-  name       String
-  slug       String   @unique
-
+  id                     String    @id @default(cuid())
+  createdAt              DateTime  @default(now())
+  modifiedAt             DateTime  @default(now())
+  email                  String    @unique
+  name                   String?
   stripeCustomerId       String?   @unique
   stripeSubscriptionId   String?   @unique
   stripePriceId          String?

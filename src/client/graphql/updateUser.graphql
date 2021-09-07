@@ -3,11 +3,6 @@ mutation UpdateUser($name: String, $userId: String!) {
     id
     name
     email
-    projects {
-      id
-      name
-      slug
-      paidPlan
-    }
+    paidPlan
   }
 }

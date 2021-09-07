@@ -24,7 +24,7 @@ const COOKIE_SECRET = process.env.COOKIE_SECRET;
  * ```
  */
 function handler() {
-  if (!COOKIE_SECRET) throw new Error(`Please add COOKIE_SECRET to your .env.local file!`);
+  if (!COOKIE_SECRET) throw new Error('Please provide a COOKIE_SECRET environmental variable.');
 
   return (
     nc<Request, NextApiResponse>({
