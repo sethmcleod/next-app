@@ -54,7 +54,7 @@
     "urql": "^2.0.3"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-env": "^7.14.7",
     "@babel/preset-typescript": "^7.13.0",
     "@graphql-codegen/cli": "^1.21.5",
     "@graphql-codegen/near-operation-file-preset": "^1.18.1",
@@ -69,9 +69,9 @@
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.2",
     "@types/passport": "^1.0.6",
-    "@types/react": "^17.0.10",
+    "@types/react": "^17.0.14",
     "@types/slug": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.26.1",
     "common-tags": "^1.8.0",
     "concurrently": "^6.2.0",
