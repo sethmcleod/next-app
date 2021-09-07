@@ -31,10 +31,10 @@ nvm use
 yarn
 ```
 
-4. **Start the local development database** as well as the Stripe CLI webhook listener with `docker-compose`:
+4. **Start the local development database** as well as the Stripe CLI webhook listener with `docker compose`:
 
 ```sh
-docker-compose up
+docker compose up
 ```
 
 5. **Copy the webhook signing secret** that the Stripe CLI logged and add it to your `.env` file.
@@ -42,7 +42,7 @@ docker-compose up
 6. **Migrate your local development database** to the base schema:
 
 ```sh
-yarn prisma:migrate
+yarn migrate
 ```
 
 ### Development workflow
@@ -52,7 +52,7 @@ To develop your app, you always need to have two commands running concurrently:
 1. **Start the development database** with:
 
 ```sh
-docker-compose up
+docker compose up
 ```
 
 2. **Start the development process**, which also runs all the necessary code generators:
@@ -69,7 +69,7 @@ The **three most important commands** you'll run frequently during development:
 
 - `yarn generate`: Generates the Prisma client ([docs](https://www.prisma.io/docs/concepts/components/prisma-client)), which Nexus uses and generates the GraphQL schema ([docs](https://nexusjs.org/docs/guides/generated-artifacts)), which GraphQL Codegen uses and generates the urql hooks ([docs](https://graphql-code-generator.com/docs/plugins/typescript-urql)). Run this whenever you change the database schema, GraphQL schema or GraphQL queries.
 
-- `yarn prisma:migrate`: Creates migration files from your Prisma schema changes and runs those migrations on your local dev db ([docs](https://www.prisma.io/docs/concepts/components/prisma-migrate)). Run this whenever you change your database schema.
+- `yarn migrate`: Creates migration files from your Prisma schema changes and runs those migrations on your local dev db ([docs](https://www.prisma.io/docs/concepts/components/prisma-migrate)). Run this whenever you change your database schema.
 
 - `yarn prisma:studio`: Starts [Prisma Studio](https://prisma.io/studio) on `localhost:5555` where you can inspect your local development database.
 
@@ -80,3 +80,5 @@ All the others are used in CI or by those three main scripts, but you should onl
 ---
 
 Crafted with ❤️ and 🍺
+
+Inspired by [Bedrock](https://bedrock.mxstbr.com/) by [Max Stoiber](https://mxstbr.com/)
