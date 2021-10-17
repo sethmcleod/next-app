@@ -15,7 +15,9 @@ export interface SeedData {
 async function emptyDatabase() {
   const tables = Prisma.dmmf.datamodel.models.map((model) => model.dbName || model.name);
 
-  await Promise.all(tables.map((table) => prisma.$executeRaw(`DELETE FROM "${table}";`)));
+  for (const table of tables) {
+    await prisma.$executeRaw(`DELETE FROM "${table}";`);
+  }
 }
 
 async function seedDatabase({ users }: SeedData) {
