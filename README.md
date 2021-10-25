@@ -1,9 +1,19 @@
-# Next App
+# ⚡️ Next App
 
-⚡️ Next.js & GraphQL boilerplate
+Next App is a full-stack, type-safe boilerplate for building SaaS apps. It includes everything you need to hit the ground running on a new project.
 
-- [Stripe](https://stripe.com) is used for payments
-- [Postmark](https://postmarkapp.com) is used for sending emails
+Here are some of the technologies used:
+
+- [Next.js](https://nextjs.org/) as the React framework
+- [TypeScript](https://www.typescriptlang.org/) as the programming language
+- [Chakra UI](https://chakra-ui.com/) as the React component library
+- [urql](https://github.com/formidablelabs/urql) as the GraphQL client
+- [Nexus](https://nexusjs.org/) for constructing the GraphQL schema
+- [Prisma](https://www.prisma.io/) as the ORM for managing the database and migrations
+- [PostgreSQL](https://www.postgresql.org/) as the database
+- [Vercel](https://vercel.com/) for deployments and infrastructure
+- [Stripe](https://stripe.com) for handling subscriptions and payments
+- [Postmark](https://postmarkapp.com) as the email API
 
 ## Getting started
 
@@ -42,7 +52,7 @@ docker compose up
 6. **Migrate your local development database** to the base schema:
 
 ```sh
-yarn migrate
+yarn prisma:migrate
 ```
 
 ### Development workflow
@@ -69,7 +79,7 @@ The **three most important commands** you'll run frequently during development:
 
 - `yarn generate`: Generates the Prisma client ([docs](https://www.prisma.io/docs/concepts/components/prisma-client)), which Nexus uses and generates the GraphQL schema ([docs](https://nexusjs.org/docs/guides/generated-artifacts)), which GraphQL Codegen uses and generates the urql hooks ([docs](https://graphql-code-generator.com/docs/plugins/typescript-urql)). Run this whenever you change the database schema, GraphQL schema or GraphQL queries.
 
-- `yarn migrate`: Creates migration files from your Prisma schema changes and runs those migrations on your local dev db ([docs](https://www.prisma.io/docs/concepts/components/prisma-migrate)). Run this whenever you change your database schema.
+- `yarn prisma:migrate`: Creates migration files from your Prisma schema changes and runs those migrations on your local dev db ([docs](https://www.prisma.io/docs/concepts/components/prisma-migrate)). Run this whenever you change your database schema.
 
 - `yarn prisma:studio`: Starts [Prisma Studio](https://prisma.io/studio) on `localhost:5555` where you can inspect your local development database.
 
