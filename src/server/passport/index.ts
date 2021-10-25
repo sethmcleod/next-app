@@ -5,7 +5,7 @@ import magicLink from './magicLink';
 
 passport.use(magicLink);
 
-// This types passport.(de)serializeUser!
+// This types passport.serializeUser and passport.deserializeUser
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Express {
@@ -19,6 +19,7 @@ declare global {
 }
 
 passport.serializeUser(async (u: Express.User, done) => {
+  // Emails should not be case sensitive
   const email = u.email.toLowerCase();
   const user = await prisma.user.upsert({
     create: {

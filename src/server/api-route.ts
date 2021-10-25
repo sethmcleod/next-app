@@ -24,7 +24,9 @@ const COOKIE_SECRET = process.env.COOKIE_SECRET;
  * ```
  */
 function handler() {
-  if (!COOKIE_SECRET) throw new Error('Please provide a COOKIE_SECRET environmental variable.');
+  if (!COOKIE_SECRET) {
+    throw new Error('Please provide a COOKIE_SECRET environmental variable.');
+  }
 
   return (
     nc<Request, NextApiResponse>({
@@ -34,8 +36,7 @@ function handler() {
       },
     })
       // In order for authentication to work on Vercel, req.protocol needs to be set correctly.
-      // However, Vercel's reverse proxy setup breaks req.protocol, which the custom
-      // trustProxyMiddleware fixes again.
+      // However, Vercel's reverse proxy setup breaks req.protocol, which the custom trustProxyMiddleware fixes again.
       .use(process.env.VERCEL ? trustProxyMiddleware : (_, __, next) => next())
       .use(
         cookieSession({

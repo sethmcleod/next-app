@@ -1,15 +1,12 @@
 import { enumType, extendType, nonNull, objectType, stringArg } from 'nexus';
-import slug from 'slug';
 
 import prisma from '../../db/prisma';
 import { getUserPaidPlan } from '../../get-user-paid-plan';
-import { generateInvitationToken } from '../../invitations/token';
-import { sendEmail } from '../../send-email';
 import stripe from '../../stripe';
 import { plans } from '../../stripe/plans';
 
 export const PaidPlan = enumType({
-  name: `PaidPlan`,
+  name: 'PaidPlan',
   members: Object.keys(plans),
 });
 
@@ -119,7 +116,8 @@ const mutations = extendType({
 
         if (!user) return null;
 
-        // checkout.sessions.create can only be called with *either* a customer ID (if it exists) *or* a customer_email (if no ID exists yet)
+        // checkout.sessions.create can only be called with *either* a customer ID
+        // (if it exists) *or* a customer_email (if no ID exists yet)
         const customerMetadata = user.stripeCustomerId
           ? {
               customer: user.stripeCustomerId,

@@ -34,7 +34,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
   // Verify that this is a genuine Stripe request
   try {
     event = stripe.webhooks.constructEvent(body, sig, WEBHOOK_ENDPOINT_SECRET);
-  } catch (err) {
+  } catch (err: any) {
     error(err);
     response.status(400).send(`Webhook Error: ${err.message}`);
     return;

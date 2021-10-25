@@ -3,7 +3,9 @@ import MagicLoginStrategy from 'passport-magic-login';
 import { getRequestOrigin } from '../get-request-origin';
 import { sendEmail } from '../send-email';
 
-if (!process.env.MAGIC_LINK_SECRET) throw new Error('Please add process.env.MAGIC_LINK_SECRET to your .env file!');
+if (!process.env.MAGIC_LINK_SECRET) {
+  throw new Error('Please add process.env.MAGIC_LINK_SECRET to your .env file!');
+}
 
 const magicLink = new MagicLoginStrategy({
   secret: process.env.MAGIC_LINK_SECRET,
