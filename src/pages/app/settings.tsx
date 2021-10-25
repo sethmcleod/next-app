@@ -71,7 +71,9 @@ export default function Settings() {
       </Heading>
       <Text mt="4" mb="8" align="center" maxW="md" fontWeight="medium">
         {username && <Text as="p">{`Hey ${username}! 👋`}</Text>}
-        <Text as="p">Here you can update your name or upgrade to Pro!</Text>
+        <Text as="p">
+          Here you can update your name or {currentUser.paidPlan ? 'manage billing info' : 'upgrade to Pro'}.
+        </Text>
       </Text>
       <Box bg={bgColor} py="8" px={{ base: '4', md: '10' }} shadow="base" rounded={{ sm: 'lg' }}>
         <chakra.form onSubmit={handleSubmit}>
