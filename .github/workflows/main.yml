@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       # Cache node_modules for faster CI runs if the yarn.lock doesn't change change
       - name: Get yarn cache directory path
