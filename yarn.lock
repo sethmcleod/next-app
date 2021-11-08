@@ -1568,12 +1568,12 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@graphql-codegen/add@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/add/-/add-2.0.2.tgz#4acbb95be9ebb859a3cebfe7132fdf49ffe06dd8"
+"@graphql-codegen/add@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/add/-/add-3.1.0.tgz#cd02fd6d80a7f62839cb27160b62e48366a237c5"
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^1.18.2"
-    tslib "~2.0.1"
+    "@graphql-codegen/plugin-helpers" "^2.1.0"
+    tslib "~2.3.0"
 
 "@graphql-codegen/cli@^2.2.1":
   version "2.2.1"
@@ -1629,17 +1629,18 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/near-operation-file-preset@^1.18.1":
-  version "1.18.6"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/near-operation-file-preset/-/near-operation-file-preset-1.18.6.tgz#2378ac75feaeaa1cfd2146bd84bf839b1fe20d9d"
+"@graphql-codegen/near-operation-file-preset@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/near-operation-file-preset/-/near-operation-file-preset-2.2.1.tgz#a05f2b6a70d90e97875abf861b84b9ee742214ba"
   dependencies:
-    "@graphql-codegen/add" "^2.0.2"
-    "@graphql-codegen/plugin-helpers" "^1.18.8"
-    "@graphql-codegen/visitor-plugin-common" "1.22.0"
+    "@graphql-codegen/add" "^3.1.0"
+    "@graphql-codegen/plugin-helpers" "^2.3.0"
+    "@graphql-codegen/visitor-plugin-common" "2.5.0"
+    "@graphql-tools/utils" "^8.5.2"
     parse-filepath "^1.0.2"
     tslib "~2.3.0"
 
-"@graphql-codegen/plugin-helpers@^1.18.2", "@graphql-codegen/plugin-helpers@^1.18.7", "@graphql-codegen/plugin-helpers@^1.18.8":
+"@graphql-codegen/plugin-helpers@^1.18.7", "@graphql-codegen/plugin-helpers@^1.18.8":
   version "1.18.8"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-1.18.8.tgz#39aac745b9e22e28c781cc07cf74836896a3a905"
   dependencies:
@@ -1649,11 +1650,11 @@
     lodash "~4.17.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/plugin-helpers@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-2.2.0.tgz#f74bbba009cd3685db33187880e980d609065420"
+"@graphql-codegen/plugin-helpers@^2.1.0", "@graphql-codegen/plugin-helpers@^2.2.0", "@graphql-codegen/plugin-helpers@^2.3.0":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/plugin-helpers/-/plugin-helpers-2.3.1.tgz#b66c742d3209a85bc2f72f9e2eceb6b08fc81f85"
   dependencies:
-    "@graphql-tools/utils" "^8.1.1"
+    "@graphql-tools/utils" "^8.5.2"
     change-case-all "1.0.14"
     common-tags "1.8.0"
     import-from "4.0.0"
@@ -1728,6 +1729,21 @@
   resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.4.0.tgz#a00441f1bbadac660905c4bc01fc443433bd09b9"
   dependencies:
     "@graphql-codegen/plugin-helpers" "^2.2.0"
+    "@graphql-tools/optimize" "^1.0.1"
+    "@graphql-tools/relay-operation-optimizer" "^6.3.7"
+    "@graphql-tools/utils" "^8.3.0"
+    auto-bind "~4.0.0"
+    change-case-all "1.0.14"
+    dependency-graph "^0.11.0"
+    graphql-tag "^2.11.0"
+    parse-filepath "^1.0.2"
+    tslib "~2.3.0"
+
+"@graphql-codegen/visitor-plugin-common@2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.5.0.tgz#e412fade4ca3178a19e7ea122a4cb3463f2bf585"
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.3.0"
     "@graphql-tools/optimize" "^1.0.1"
     "@graphql-tools/relay-operation-optimizer" "^6.3.7"
     "@graphql-tools/utils" "^8.3.0"
@@ -1925,7 +1941,7 @@
     value-or-promise "1.0.11"
     ws "8.2.3"
 
-"@graphql-tools/utils@8.5.0", "@graphql-tools/utils@^8.0.1", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.2.0", "@graphql-tools/utils@^8.2.5", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.4.0", "@graphql-tools/utils@^8.5.0":
+"@graphql-tools/utils@8.5.0":
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.5.0.tgz#439487ac756d9458a33091e5e0435ddf8e794f3e"
   dependencies:
@@ -1938,6 +1954,12 @@
     "@ardatan/aggregate-error" "0.0.6"
     camel-case "4.1.2"
     tslib "~2.2.0"
+
+"@graphql-tools/utils@^8.0.1", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.2.0", "@graphql-tools/utils@^8.2.5", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.4.0", "@graphql-tools/utils@^8.5.0", "@graphql-tools/utils@^8.5.2":
+  version "8.5.3"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.5.3.tgz#404062e62cae9453501197039687749c4885356e"
+  dependencies:
+    tslib "~2.3.0"
 
 "@graphql-tools/wrap@^8.3.0":
   version "8.3.0"
