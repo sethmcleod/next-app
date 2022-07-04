@@ -85,7 +85,7 @@
     "next-prisma-plugin": "~0.1.1",
     "prettier": "^2.6.2",
     "prisma": "~2.23.0",
-    "ts-node": "^10.4.0",
+    "ts-node": "^10.8.2",
     "typescript": "^4.4.4"
   },
   "jest": {
